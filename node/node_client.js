@@ -1,8 +1,8 @@
 var Faye   = require('faye')
-var client = new Faye.Client('http://localhost:8000/')
+var client = new Faye.Client('http://localhost:8000/faye')
 
 client.subscribe('/messages', function(message) {
-  alert('Got a message: ' + message.text)
+  console.log('We got a message: ' + message.text)
 })
 
 client.publish('/messages', {
